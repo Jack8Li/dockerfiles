@@ -37,8 +37,7 @@ RUN  apk --no-cache add \
                         libev-dev \
                         libtool \
                         libffi-dev            && \
-     apk --no-cache add --virtual .build-deps \
-                        tar \
+     apk --no-cache add tar \
                         make \
                         gettext \
                         py3-pip \
