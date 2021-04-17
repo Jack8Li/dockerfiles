@@ -27,17 +27,13 @@ WORKDIR /root/shadowsocks
 
 RUN  apk --no-cache add \
                         curl \
-                        libintl-perl \
+                        libintl \
                         python3-dev \
                         libsodium-dev \
-                        libssl-dev \
-                        openssl \
-                        libssl-dev \
-                        libudns-dev \
-                        libmbedtls-dev \
-                        libpcre++-dev \
-                        libpcre3 \
-                        libpcre3-dev \
+                        openssl-dev \
+                        udns-dev \
+                        mbedtls-dev \
+                        pcre-dev \
                         libev-dev \
                         libtool \
                         libffi-dev            && \
@@ -45,10 +41,10 @@ RUN  apk --no-cache add \
                         tar \
                         make \
                         gettext \
-                        python3-pip \
+                        py3-pip \
                         autoconf \
                         automake \
-                        build-essential \
+                        build-base \
                         linux-headers         && \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      && \
