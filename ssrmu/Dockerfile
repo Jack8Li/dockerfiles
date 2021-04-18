@@ -22,7 +22,7 @@ ENV NODE_ID=0                     \
     CONNECT_VERBOSE_INFO=0        \
     FAST_OPEN=false
 
-COPY . /root/shadowsocks
+COPY . /root/shadowsocks # buildkit
 WORKDIR /root/shadowsocks
 
 RUN  apk --no-cache add \
@@ -49,7 +49,7 @@ RUN  apk --no-cache add \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      && \
      cp  /usr/bin/envsubst  /usr/local/bin/   && \
-#     pip install --upgrade pip                && \
+     pip install --upgrade pip                && \
      pip install -r requirements.txt          && \
      rm -rf ~/.cache && touch /etc/hosts.deny && \
      apk del --purge .build-deps
