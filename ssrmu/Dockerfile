@@ -25,27 +25,6 @@ ENV NODE_ID=0                     \
 COPY . /root/shadowsocks
 WORKDIR /root/shadowsocks
 
-RUN  apk --no-cache add \
-                        curl \
-                        libintl \
-                        python3-dev \
-                        libsodium-dev \
-                        openssl-dev \
-                        udns-dev \
-                        mbedtls-dev \
-                        pcre-dev \
-                        libev-dev \
-                        libtool \
-                        libffi-dev            && \
-     apk --no-cache add --virtual .build-deps \
-                        tar \
-                        make \
-                        gettext \
-                        py3-pip \
-                        autoconf \
-                        automake \
-                        build-base \
-                        linux-headers         && \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      && \
      cp  /usr/bin/envsubst  /usr/local/bin/   && \
